@@ -35,10 +35,10 @@ $password="";
             exit;
     }
 
-    $servername = "";
-    $usernamemysql = "";
-    $passwordmysql = "";
-    $dbname = "";
+  $servername = "";
+  $usernamemysql = "";
+  $passwordmysql = "";
+  $dbname = "";
      
      $conn = mysqli_connect($servername, $usernamemysql, $passwordmysql);
      mysqli_select_db($conn,$dbname);

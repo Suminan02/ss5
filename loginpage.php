@@ -23,6 +23,16 @@
 </head>
 
 <body>
+<?php
+    session_start();
+    
+    if ( isset($_SESSION["username"])){
+      echo "<script>alert('User still logged in');
+      window.location.href='loginsuccess.php';
+      </script>";
+      exit;
+    } 
+    ?>
         <div id="wrapper" class="mt-5">
                             <div class="form-group">
                             <h3>Login</h3>
@@ -42,36 +52,8 @@
                         
                         <div class="alert " role="alert" id="wornninglogin">&nbsp;</div>
         </div>
+        
 
-        <!-- <table>
-            <div>
-            <tr>
-                <td class="info_right">Username</td>
-                <td>
-                    <input type="username" name="username" id="username" placeholder="please enter username">
-                </td>
-            </tr>
-            </div>
-            
-            <tr>
-                <td class="info_right" >Password</td>
-                <td>
-                    <input type="password" name="password" id="password" placeholder="please enter your password " >
-                </td>
-                
-            </tr>
-            <tr>
-                <td class="div_button"><button id="btnlogin" type="submit" class="btn btn-dark">Login</button></td>
-                <td class="div_button"><a href="table2.php"><button type="button" id="btn" >Register</button></a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span id="wornninglogin">&nbsp;</span></td>
-                <td><span id="wornningsuccess">&nbsp;</span></td>
-            </tr>
-        </table> -->
-    
-    
     <script>
         
         $( document ).ready(function() {
@@ -133,7 +115,9 @@
             $("#wornninglogin").html(msg_wron);
             $("#"+elm_id).focus();
         }
+        
     </script>
-    
+   
 </body>
+
 </html>
